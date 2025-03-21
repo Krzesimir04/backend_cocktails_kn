@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      AdonisJS - A fully featured web framework for Node.js
+    </title>
+
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=instrument-sans:400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --sand-1: #fdfdfc;
+        --sand-2: #f9f9f8;
+        --sand-3: #f1f0ef;
+        --sand-4: #e9e8e6;
+        --sand-5: #e2e1de;
+        --sand-6: #dad9d6;
+        --sand-7: #cfceca;
+        --sand-8: #bcbbb5;
+        --sand-9: #8d8d86;
+        --sand-10: #82827c;
+        --sand-11: #63635e;
+        --sand-12: #21201c;
+      }
+    </style>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @stack('dumper')
+  </head>
+  <body class="min-h-screen w-screen font-sans">
+    <h1>Cocktails api documentation</h1>
+    <div class="object_block">
+        <h2>
+          Categories
+        </h2>
+      <details>
+        <summary>
+          GET /categories
+        </summary>
+        <div>
+          <h3>Parameters</h3>
+          <p>no parameters</p>
+          <h3>Response success example</h3>
+          <pre>
+            [
+              {
+                "id": 5,
+                "name": "oridnary",
+                "createdAt": "2025-03-21T06:42:04.000+00:00"
+              },
+              {
+                "id": 4,
+                "name": "party",
+                "createdAt": "2025-03-21T06:41:58.000+00:00"
+              }
+            ]
+          </pre>
+        </div>
+      </details>
+      <details>
+        <summary>
+          POST /categories
+        </summary>
+        <div>
+          <h3>Parameters</h3>
+          <p>no parameters</p>
+          <h3>Received data example</h3>
+          <pre>
+            {
+              "name": "simple drink",
+            }
+        </pre>
+          <h3>Response success example</h3>
+          <pre>
+            {
+              "id": 5,
+              "name": "simple drink",
+              "createdAt": "2025-03-21T06:42:04.000+00:00"
+            }
+          </pre>
+        </div>
+      </details>
+      <details>
+        <summary>
+          GET /categories/{id}
+        </summary>
+        <div>
+          <h3>Parameters</h3>
+          <p>no parameters</p>
+          <h3>Response success example</h3>
+          <pre>
+            {
+              "id": 5,
+              "name": "simple drink",
+              "createdAt": "2025-03-21T06:42:04.000+00:00"
+            }
+          </pre>
+        </div>
+      </details>
+      <details>
+        <summary>
+          PUT /categories/{id}
+        </summary>
+        <div>
+          <h3>Parameters</h3>
+          <p>no parameters</p>
+          <h3>Received data example</h3>
+          <pre>
+            {
+              "name": "simple drink - updated",
+            }
+        </pre>
+          <h3>Response success example</h3>
+          <pre>
+            {
+              "id": 5,
+              "name": "simple drink - updated",
+              "createdAt": "2025-03-21T06:42:04.000+00:00"
+            }
+          </pre>
+        </div>
+      </details>
+      <details>
+        <summary>
+          DELETE /categories/{id}
+        </summary>
+        <div>
+          <h3>Parameters</h3>
+          <p>no parameters</p>
+          <h3>Response success example</h3>
+          <pre>
+            {"message": "success"}
+          </pre>
+        </div>
+      </details>
+    </div>
+
+
+    <div class="object_block">
+        <h2>
+          Ingredients
+        </h2>
+      <details>
+        <summary>
+          GET /ingredients
+        </summary>
+        <div>
+          <h3>Parameters</h3>
+          <p>no parameters</p>
+          <h3>Response success example</h3>
+          <pre>
+            [
+              {
+                "id": 7,
+                "name": "milk",
+                "description": "milk.",
+                "isAlcohol": 0,
+                "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+                "updatedAt": "2025-03-21T16:52:47.000+00:00"
+              },
+              {
+                "id": 6,
+                "name": "vodka",
+                "description": "simple alcohol.",
+                "isAlcohol": 1,
+                "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+                "updatedAt": "2025-03-21T16:52:09.000+00:00"
+              }
+            ]
+          </pre>
+        </div>
+      </details>
+      <details>
+        <summary>
+          POST /ingredients
+        </summary>
+        <div>
+          <h3>Parameters</h3>
+          <p>no parameters</p>
+          <h3>Received data example</h3>
+            <pre>
+              {
+                "name": "vodka",
+                "description": "simple alcohol.",
+                "isAlcohol": 1,
+                "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+              }
+          </pre>
+          <h3>Response success example</h3>
+          <pre>
+            {
+              "id": 6,
+              "name": "vodka",
+              "description": "simple alcohol.",
+              "isAlcohol": 1,
+              "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+              "updatedAt": "2025-03-21T16:52:09.000+00:00"
+            }
+          </pre>
+        </div>
+      </details>
+      <details>
+        <summary>
+          GET /ingredients/{id}
+        </summary>
+        <div>
+          <h3>Parameters</h3>
+          <p>no parameters</p>
+          <h3>Response success example</h3>
+          <pre>
+            {
+              "id": 6,
+              "name": "vodka",
+              "description": "simple alcohol.",
+              "isAlcohol": 1,
+              "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+              "updatedAt": "2025-03-21T16:52:09.000+00:00"
+            }
+          </pre>
+        </div>
+      </details>
+      <details>
+        <summary>
+          PUT /ingredients/{id}
+        </summary>
+        <div>
+          <h3>Parameters</h3>
+            <p>no parameters</p>
+            <h3>Received data example</h3>
+          <pre>
+            {
+              "name": "vodka",
+              "description": "simple alcohol.",
+              "isAlcohol": 1,
+              "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+            }
+        </pre>
+          <h3>Response success example</h3>
+          <pre>
+            {
+              "id": 6,
+              "name": "vodka",
+              "description": "simple alcohol.",
+              "isAlcohol": 1,
+              "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+              "updatedAt": "2025-03-21T16:52:09.000+00:00"
+            }
+          </pre>
+        </div>
+      </details>
+      <details>
+        <summary>
+          DELETE /ingredients/{id}
+        </summary>
+        <div>
+          <h3>Parameters</h3>
+          <p>no parameters</p>
+          <h3>Response success example</h3>
+          <pre>
+            {"message": "success"}
+          </pre>
+        </div>
+      </details>
+    </div>
+
+<div class="object_block">
+    <h2>
+      Cocktails
+    </h2>
+    <details>
+    <summary>
+      GET /cocktails
+    </summary>
+    <div>
+      <h3>Parameters</h3>
+      <p><span class="bigger">/?ingredients</span> attach ingredients and its quantity when 1.</p>
+      <h3>Response success example</h3>
+      <pre>
+        [
+          {
+              "id": 7,
+              "name": "milk",
+              "description": "milk.",
+              "isAlcohol": 0,
+              "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+              "updatedAt": "2025-03-21T16:52:47.000+00:00"
+          },
+          {
+              "id": 6,
+              "name": "vodka",
+              "description": "simple alcohol.",
+              "isAlcohol": 1,
+              "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+              "updatedAt": "2025-03-21T16:52:09.000+00:00"
+          },
+        ]
+      </pre>
+      <hr>
+      <pre>
+        [
+        {
+          "ingredients": [
+              {
+                  "ingredient": {
+                      "id": 4,
+                      "name": "martini",
+                      "description": "milk",
+                      "isAlcohol": 1,
+                      "imageUrl": "undefined",
+                      "updatedAt": "2025-03-21T06:43:09.000+00:00"
+                  },
+                  "quantity": 50
+              }
+          ],
+          "cocktail": {
+              "id": 3,
+              "name": "martini with vodka",
+              "isAlcohol": 1,
+              "categoryId": 3,
+              "instructions": "shake all ingredients.",
+              "imageUrl": "undefined",
+              "createdAt": "2025-03-21T06:55:03.000+00:00"
+          }
+          },
+          {
+              "ingredients": [
+                  {
+                      "ingredient": {
+                          "id": 4,
+                          "name": "martini",
+                          "description": "milk",
+                          "isAlcohol": 1,
+                          "imageUrl": "undefined",
+                          "updatedAt": "2025-03-21T06:43:09.000+00:00"
+                      },
+                      "quantity": 470
+                  }
+              ],
+              "cocktail": {
+                  "id": 1,
+                  "name": "martini with milk",
+                  "isAlcohol": 1,
+                  "categoryId": 3,
+                  "instructions": "undefined",
+                  "imageUrl": "undefined",
+                  "createdAt": "2025-03-21T06:43:48.000+00:00"
+              }
+          }
+        ]
+      </pre>
+    </div>
+    </details>
+    <details>
+    <summary>
+      POST /cocktails
+    </summary>
+    <div>
+      <h3>Parameters</h3>
+      <p><span class="bigger">/?ingredients</span> attach ingredients and its quantity when 1.</p>
+      <h3>Received data example</h3>
+        <pre>
+          {
+            "name": "vodka with cola",
+            "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+            "isAlcohol": 1,
+            "categoryId": 4,
+            "instructions": "shake all ingredients.",
+            "ingredients":"6:300,8:100"
+          }
+          in ingredients the schema is "ingredient_id:quantity,ingredient_id:quantity,..."
+      </pre>
+      <h3>Response success example</h3>
+      <pre>
+        {
+          "id": 6,
+          "name": "vodka",
+          "description": "simple alcohol.",
+          "isAlcohol": 1,
+          "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+          "updatedAt": "2025-03-21T16:52:09.000+00:00"
+        }
+      </pre>
+      <hr>
+      <pre>
+          {
+            "ingredients": [
+              {
+                "ingredient": {
+                  "id": 6,
+                  "name": "vodka",
+                  "description": "simple alcohol.",
+                  "isAlcohol": 1,
+                  "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+                  "updatedAt": "2025-03-21T16:52:09.000+00:00"
+                },
+                "quantity": 300
+              },
+              {
+                "ingredient": {
+                  "id": 8,
+                  "name": "cola",
+                  "description": "normal cola",
+                  "isAlcohol": 0,
+                  "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+                  "updatedAt": "2025-03-21T17:23:49.000+00:00"
+                },
+                "quantity": 100
+              }
+            ],
+            "cocktail": {
+              "id": 11,
+              "name": "vodka with cola",
+              "isAlcohol": 1,
+              "categoryId": 4,
+              "instructions": "shake all ingredients.",
+              "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+              "createdAt": "2025-03-21T17:24:01.000+00:00"
+            }
+          }
+      </pre>
+    </div>
+    </details>
+    <details>
+    <summary>
+      GET /cocktails/{id}
+    </summary>
+    <div>
+      <h3>Parameters</h3>
+      <p><span class="bigger">/?ingredients</span> attach ingredients and its quantity when 1.</p>
+      <h3>Response success example</h3>
+      <pre>
+        {
+          "id": 6,
+          "name": "vodka",
+          "description": "simple alcohol.",
+          "isAlcohol": 1,
+          "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+          "updatedAt": "2025-03-21T16:52:09.000+00:00"
+        }
+      </pre>
+      <hr>
+      <pre>
+        {
+          "ingredients": [
+            {
+              "ingredient": {
+                "id": 6,
+                "name": "vodka",
+                "description": "simple alcohol.",
+                "isAlcohol": 1,
+                "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+                "updatedAt": "2025-03-21T16:52:09.000+00:00"
+              },
+              "quantity": 300
+            },
+            {
+              "ingredient": {
+                "id": 8,
+                "name": "cola",
+                "description": "normal cola",
+                "isAlcohol": 0,
+                "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+                "updatedAt": "2025-03-21T17:23:49.000+00:00"
+              },
+              "quantity": 100
+            }
+          ],
+          "cocktail": {
+            "id": 11,
+            "name": "vodka with cola",
+            "isAlcohol": 1,
+            "categoryId": 4,
+            "instructions": "shake all ingredients.",
+            "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+            "createdAt": "2025-03-21T17:24:01.000+00:00"
+          }
+        }
+      </pre>
+    </div>
+    </details>
+    <details>
+    <summary>
+      PUT /cocktails/{id}
+    </summary>
+    <div>
+      <h3>Parameters</h3>
+      <p><span class="bigger">/?ingredients</span> attach ingredients and its quantity when 1.</p>
+        <h3>Received data example</h3>
+          <pre>
+            {
+              "name": "vodka with cola",
+              "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+              "isAlcohol": 1,
+              "categoryId": 4,
+              "instructions": "shake all ingredients.",
+              "ingredients":"6:300,8:100"
+            }
+              in ingredients the schema is "ingredient_id:quantity,ingredient_id:quantity,..."
+        </pre>
+      <h3>Response success example</h3>
+
+      <pre>
+        {
+          "id": 6,
+          "name": "vodka",
+          "description": "simple alcohol.",
+          "isAlcohol": 1,
+          "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+          "updatedAt": "2025-03-21T16:52:09.000+00:00"
+        }
+      </pre>
+      <hr>
+      <pre>
+        {
+          "ingredients": [
+            {
+              "ingredient": {
+                "id": 6,
+                "name": "vodka",
+                "description": "simple alcohol.",
+                "isAlcohol": 1,
+                "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+                "updatedAt": "2025-03-21T16:52:09.000+00:00"
+              },
+              "quantity": 300
+            },
+            {
+              "ingredient": {
+                "id": 8,
+                "name": "cola",
+                "description": "normal cola",
+                "isAlcohol": 0,
+                "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+                "updatedAt": "2025-03-21T17:23:49.000+00:00"
+              },
+              "quantity": 100
+            }
+          ],
+          "cocktail": {
+            "id": 11,
+            "name": "vodka with cola",
+            "isAlcohol": 1,
+            "categoryId": 4,
+            "instructions": "shake all ingredients.",
+            "imageUrl": "https://cocktails.solvro.pl/images/banner.png",
+            "createdAt": "2025-03-21T17:24:01.000+00:00"
+          }
+        }
+      </pre>
+    </pre>
+    </div>
+    </details>
+    <details>
+    <summary>
+      DELETE /cocktails/{id}
+    </summary>
+    <div>
+      <h3>Parameters</h3>
+      <p>no parameters</p>
+      <h3>Response success example</h3>
+      <pre>
+        {"message": "success"}
+      </pre>
+    </div>
+    </details>
+</div>
+
+  </body>
+</html>
