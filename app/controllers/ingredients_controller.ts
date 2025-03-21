@@ -8,7 +8,6 @@ export default class IngredientsController {
             ingredient.name = String(request.body().name)
             ingredient.description = String(request.body().description)
             ingredient.isAlcohol = Boolean(Number(request.body().isAlcohol))
-            console.log(request.body())
             ingredient.imageUrl = String(request.body().imageUrl)
             ingredient.save()
             return response.ok(ingredient.toJSON())

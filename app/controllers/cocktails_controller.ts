@@ -20,8 +20,6 @@ export default class CocktailsController {
             cocktail.name = String(request.body().name)
             cocktail.instructions = String(request.body().instructions)
             cocktail.isAlcohol = Boolean(request.body().isAlcohol)
-            console.log(request.body())
-            console.log(request.input('imageUrl'))
             cocktail.imageUrl = String(request.body().imageUrl || null)
             cocktail.categoryId = Number(request.body().categoryId)
             await cocktail.save()
